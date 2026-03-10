@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InvestmentApp.Communication\InvestmentApp.Communication.csproj" />
+    <ProjectReference Include="..\InvestmentApp.Domain\InvestmentApp.Domain.csproj" />
+    <ProjectReference Include="..\InvestmentApp.Exceptions\InvestmentApp.Exceptions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\Responses\" />
+  </ItemGroup>
+
+</Project>
