@@ -1,8 +1,9 @@
 ﻿using InvestmentApp.Application.DTOs.Requests;
+using InvestmentApp.Application.DTOs.Responses;
 using InvestmentApp.Application.Interfaces;
+using InvestmentApp.Domain.Interfaces;
 using InvestmentApp.Domain.Repositories;
 using InvestmentApp.Domain.ValueObjects;
-using InvestmentApp.Domain.Interfaces;
 using UserEntity = InvestmentApp.Domain.Entities.User;
 
 namespace InvestmentApp.Application.UseCases.User;
@@ -16,7 +17,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         _userRepository = userRepository;
         _passwordHasher = passwordHasher;
     }
-    public async Task ExecuteAsync(RegisterUserRequest request)
+    public async Task<RegisterUserResponse> ExecuteAsync(RegisterUserRequest request)
     {
         var emailExists = await _userRepository.ExistsActiveUserWithEmail(request.Email!);
         if (emailExists)
@@ -43,5 +44,6 @@ public class RegisterUserUseCase : IRegisterUserUseCase
             address
         );
         await _userRepository.AddAsync(user);
+        return new RegisterUserResponse(user.Id, user.Email);
     }
 }

@@ -11,7 +11,7 @@ namespace InvestmentApp.Domain.Entities
 
         public ICollection<Transaction> Transactions { get; private set; } = new List<Transaction>();
 
-        public Wallet(string name, decimal balance, User user,)
+        public Wallet(string name, decimal balance, User user)
         {
             Name = name;
             Balance = balance;
@@ -32,5 +32,6 @@ namespace InvestmentApp.Domain.Entities
             Balance -= amount;
             UpdateTimestamps();
         }
+        protected Wallet() { }
     }
 }

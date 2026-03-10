@@ -25,5 +25,6 @@ namespace InvestmentApp.Domain.Entities
             Address = newAddress;
             UpdateTimestamps(); 
         }
+        protected User() { }
     }
 }

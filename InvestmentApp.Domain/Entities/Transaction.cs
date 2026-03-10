@@ -29,4 +29,5 @@ public class Transaction : BaseEntity
         WalletId = walletId;
         CategoryId = categoryId;
     }
+    protected Transaction() { }
 }

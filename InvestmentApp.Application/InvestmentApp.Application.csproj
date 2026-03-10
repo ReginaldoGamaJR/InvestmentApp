@@ -12,8 +12,4 @@
     <ProjectReference Include="..\InvestmentApp.Exceptions\InvestmentApp.Exceptions.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\Responses\" />
-  </ItemGroup>
-
 </Project>

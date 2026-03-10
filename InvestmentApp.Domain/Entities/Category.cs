@@ -8,4 +8,5 @@ public class Category : BaseEntity
     {
         Name = name;
     }
+    protected Category() { }
 }

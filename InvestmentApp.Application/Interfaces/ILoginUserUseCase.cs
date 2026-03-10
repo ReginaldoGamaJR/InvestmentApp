@@ -3,7 +3,7 @@ using InvestmentApp.Application.DTOs.Responses;
 
 namespace InvestmentApp.Application.Interfaces;
 
-public interface IRegisterUserUseCase
+public interface ILoginUserUseCase
 {
-    Task<RegisterUserResponse> ExecuteAsync(RegisterUserRequest request);
+    Task<LoginResponse> ExecuteAsync(LoginRequest request);
 }
