@@ -3,11 +3,10 @@ using InvestmentApp.Application.UseCases;
 using InvestmentApp.Application.UseCases.User;
 using InvestmentApp.Domain.Interfaces;
 using InvestmentApp.Domain.Repositories;
-using InvestmentApp.Infrastructure.Persistence; 
+using InvestmentApp.Infrastructure.Persistence;
 using InvestmentApp.Infrastructure.Repositories;
 using InvestmentApp.Infrastructure.Security;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration; 
 
 namespace InvestmentApp.API.Extensions;
 
@@ -23,11 +22,13 @@ public static class DependencyInjection
         // Camada de Application (Use Cases)
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         services.AddScoped<ILoginUserUseCase, LoginUserUseCase>();
+        services.AddScoped<ICreateWalletUseCase, CreateWalletUseCase>();
 
         // Camada de Infrastructure (Serviços Externos)
         services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
         services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IWalletRepository, WalletRepository>();
 
         return services;
     }
